@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace TP_DB_CONNECTION
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void btn_passager_Click(object sender, EventArgs e)
+        {
+            InsertPassager insertPassager = new InsertPassager();
+            insertPassager.Show();
         }
     }
 }
