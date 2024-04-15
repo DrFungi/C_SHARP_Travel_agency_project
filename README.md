@@ -1,4 +1,4 @@
-# Tralvel Agency Management System
+# Travel Agency Management System
 
 This is a project made for the C# course in Bois de Boulogne.
 The main purpose of the project is to build a Winforms app using connected mode with the database, construct the class structure and its code so a travel agent can insert passengers and reservations, and perform different searches with that data.
