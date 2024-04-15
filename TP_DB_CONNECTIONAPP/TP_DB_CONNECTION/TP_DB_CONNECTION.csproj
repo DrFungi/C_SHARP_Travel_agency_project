@@ -49,25 +49,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dao.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="dao\dao.cs" />
+    <Compile Include="modele\Passager.cs" />
+    <Compile Include="ui\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="ui\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="InsertPassager.cs">
+    <Compile Include="ui\InsertPassager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InsertPassager.Designer.cs">
+    <Compile Include="ui\InsertPassager.Designer.cs">
       <DependentUpon>InsertPassager.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="ui\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InsertPassager.resx">
+    <EmbeddedResource Include="ui\InsertPassager.resx">
       <DependentUpon>InsertPassager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -91,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
