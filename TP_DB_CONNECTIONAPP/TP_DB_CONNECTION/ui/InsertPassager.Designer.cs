@@ -40,11 +40,11 @@
             this.txt_telephone = new System.Windows.Forms.TextBox();
             this.txt_adresse = new System.Windows.Forms.TextBox();
             this.txt_nom = new System.Windows.Forms.TextBox();
-            this.txt_statut = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_inserer = new System.Windows.Forms.Button();
             this.btn_retour = new System.Windows.Forms.Button();
             this.txt_pays = new System.Windows.Forms.TextBox();
+            this.cmb_statut = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -145,13 +145,6 @@
             this.txt_nom.Size = new System.Drawing.Size(175, 20);
             this.txt_nom.TabIndex = 13;
             // 
-            // txt_statut
-            // 
-            this.txt_statut.Location = new System.Drawing.Point(248, 332);
-            this.txt_statut.Name = "txt_statut";
-            this.txt_statut.Size = new System.Drawing.Size(175, 20);
-            this.txt_statut.TabIndex = 14;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -189,15 +182,26 @@
             this.txt_pays.Size = new System.Drawing.Size(175, 20);
             this.txt_pays.TabIndex = 9;
             // 
+            // cmb_statut
+            // 
+            this.cmb_statut.FormattingEnabled = true;
+            this.cmb_statut.Items.AddRange(new object[] {
+            "occasionnel",
+            "Frequen Flyer"});
+            this.cmb_statut.Location = new System.Drawing.Point(248, 336);
+            this.cmb_statut.Name = "cmb_statut";
+            this.cmb_statut.Size = new System.Drawing.Size(175, 21);
+            this.cmb_statut.TabIndex = 19;
+            // 
             // InsertPassager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 517);
+            this.Controls.Add(this.cmb_statut);
             this.Controls.Add(this.btn_retour);
             this.Controls.Add(this.btn_inserer);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txt_statut);
             this.Controls.Add(this.txt_nom);
             this.Controls.Add(this.txt_adresse);
             this.Controls.Add(this.txt_telephone);
@@ -232,10 +236,10 @@
         private System.Windows.Forms.TextBox txt_telephone;
         private System.Windows.Forms.TextBox txt_adresse;
         private System.Windows.Forms.TextBox txt_nom;
-        private System.Windows.Forms.TextBox txt_statut;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_inserer;
         private System.Windows.Forms.Button btn_retour;
         private System.Windows.Forms.TextBox txt_pays;
+        private System.Windows.Forms.ComboBox cmb_statut;
     }
 }
