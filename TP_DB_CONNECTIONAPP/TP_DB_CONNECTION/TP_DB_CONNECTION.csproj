@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mysql.data">
-      <HintPath>..\..\..\MySQL_Connection\connector_DB\mysql.data.dll</HintPath>
+      <HintPath>..\..\..\mysql_connector\mysql.data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
