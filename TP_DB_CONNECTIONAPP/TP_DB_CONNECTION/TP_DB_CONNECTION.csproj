@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dao\dao.cs" />
+    <Compile Include="dao\DaoPassager.cs" />
     <Compile Include="modele\Passager.cs" />
     <Compile Include="ui\Form1.cs">
       <SubType>Form</SubType>
