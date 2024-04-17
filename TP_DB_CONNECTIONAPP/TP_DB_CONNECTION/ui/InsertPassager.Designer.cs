@@ -187,7 +187,7 @@
             this.cmb_statut.FormattingEnabled = true;
             this.cmb_statut.Items.AddRange(new object[] {
             "occasionnel",
-            "Frequen Flyer"});
+            "Frequent Flyer"});
             this.cmb_statut.Location = new System.Drawing.Point(248, 336);
             this.cmb_statut.Name = "cmb_statut";
             this.cmb_statut.Size = new System.Drawing.Size(175, 21);
