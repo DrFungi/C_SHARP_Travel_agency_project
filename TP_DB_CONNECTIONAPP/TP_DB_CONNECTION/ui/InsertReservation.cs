@@ -21,7 +21,7 @@ namespace TP_DB_CONNECTION.ui
             InitializeComponent();
         }
 
-        Dao Dao = new Dao("server=localhost;userid=root;database=gestionreservation;port=3306");
+        DaoPassager Dao = new DaoPassager("server=localhost;userid=root;database=gestionreservation;port=3306");
 
         private void btn_retour_Click(object sender, EventArgs e)
         {
