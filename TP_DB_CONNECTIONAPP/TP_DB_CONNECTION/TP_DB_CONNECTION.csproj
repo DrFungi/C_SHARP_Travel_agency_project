@@ -51,11 +51,18 @@
   <ItemGroup>
     <Compile Include="dao\dao.cs" />
     <Compile Include="modele\Passager.cs" />
-    <Compile Include="ui\Form1.cs">
+    <Compile Include="modele\Reservation.cs" />
+    <Compile Include="ui\InsertReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ui\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ui\InsertReservation.Designer.cs">
+      <DependentUpon>InsertReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MenuHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\MenuHome.Designer.cs">
+      <DependentUpon>MenuHome.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\InsertPassager.cs">
       <SubType>Form</SubType>
@@ -65,8 +72,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ui\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ui\InsertReservation.resx">
+      <DependentUpon>InsertReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\MenuHome.resx">
+      <DependentUpon>MenuHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\InsertPassager.resx">
       <DependentUpon>InsertPassager.cs</DependentUpon>

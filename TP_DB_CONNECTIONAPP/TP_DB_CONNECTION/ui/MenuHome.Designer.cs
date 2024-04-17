@@ -1,6 +1,6 @@
 ﻿namespace TP_DB_CONNECTION
 {
-    partial class MainMenu
+    partial class MenuHome
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,10 @@
             // 
             // btn_passager
             // 
-            this.btn_passager.Location = new System.Drawing.Point(133, 176);
+            this.btn_passager.Location = new System.Drawing.Point(177, 217);
+            this.btn_passager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_passager.Name = "btn_passager";
-            this.btn_passager.Size = new System.Drawing.Size(96, 61);
+            this.btn_passager.Size = new System.Drawing.Size(128, 75);
             this.btn_passager.TabIndex = 0;
             this.btn_passager.Text = "Passager";
             this.btn_passager.UseVisualStyleBackColor = true;
@@ -45,32 +46,36 @@
             // 
             // btn_Reservation
             // 
-            this.btn_Reservation.Location = new System.Drawing.Point(322, 176);
+            this.btn_Reservation.Location = new System.Drawing.Point(429, 217);
+            this.btn_Reservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Reservation.Name = "btn_Reservation";
-            this.btn_Reservation.Size = new System.Drawing.Size(90, 61);
+            this.btn_Reservation.Size = new System.Drawing.Size(120, 75);
             this.btn_Reservation.TabIndex = 1;
             this.btn_Reservation.Text = "Reservation";
             this.btn_Reservation.UseVisualStyleBackColor = true;
+            this.btn_Reservation.Click += new System.EventHandler(this.btn_Reservation_Click);
             // 
             // btn_Analyse
             // 
-            this.btn_Analyse.Location = new System.Drawing.Point(518, 176);
+            this.btn_Analyse.Location = new System.Drawing.Point(691, 217);
+            this.btn_Analyse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Analyse.Name = "btn_Analyse";
-            this.btn_Analyse.Size = new System.Drawing.Size(85, 61);
+            this.btn_Analyse.Size = new System.Drawing.Size(113, 75);
             this.btn_Analyse.TabIndex = 2;
             this.btn_Analyse.Text = "Analyse";
             this.btn_Analyse.UseVisualStyleBackColor = true;
             // 
-            // MainMenu
+            // MenuHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btn_Analyse);
             this.Controls.Add(this.btn_Reservation);
             this.Controls.Add(this.btn_passager);
-            this.Name = "MainMenu";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MenuHome";
+            this.Text = "MenuHome";
             this.ResumeLayout(false);
 
         }

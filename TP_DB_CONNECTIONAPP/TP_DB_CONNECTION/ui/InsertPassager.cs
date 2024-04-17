@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TP_DB_CONNECTION
 {
     public partial class InsertPassager : Form
@@ -32,11 +33,13 @@ namespace TP_DB_CONNECTION
             {
                 Dao.GetConnection();
 
-                string execute = "INSERT INTO passager (nom, prenom, adresse, ville, pays, statut)" +
-                    " VALUES (@v_nom,@v_prenom,@v_adresse,@v_ville,@v_pays,@v_statut)";
+                string execute = "INSERT INTO passager (nom, prenom, adresse,telephone,ville, pays, statut)" +
+                    " VALUES (@v_nom,@v_prenom,@v_adresse,@v_telephone,@v_ville,@v_pays,@v_statut)";
+                 
                 string v_nom = txt_nom.Text;
                 string v_prenom = txt_prenom.Text;
                 string v_adresse = txt_adresse.Text;
+                string v_telephone = txt_telephone.Text;
                 string v_ville = txt_ville.Text;
                 string v_pays = txt_pays.Text;
                 string v_statut = cmb_statut.Text;
@@ -54,16 +57,20 @@ namespace TP_DB_CONNECTION
                 p3.Value = v_adresse;
 
                 MySqlParameter p4 = new MySqlParameter();
-                p4.ParameterName = "@v_ville";
-                p4.Value = v_ville;
+                p4.ParameterName = "@v_telephone";
+                p4.Value = v_telephone;
 
                 MySqlParameter p5 = new MySqlParameter();
-                p5.ParameterName = "@v_pays";
-                p5.Value = v_pays;
+                p5.ParameterName = "@v_ville";
+                p5.Value = v_ville;
 
                 MySqlParameter p6 = new MySqlParameter();
-                p6.ParameterName = "@v_statut";
-                p6.Value = v_statut;
+                p6.ParameterName = "@v_pays";
+                p6.Value = v_pays;
+
+                MySqlParameter p7 = new MySqlParameter();
+                p7.ParameterName = "@v_statut";
+                p7.Value = v_statut;
 
                 MySqlCommand cmd = new MySqlCommand(execute, Dao.conn);
 
@@ -73,9 +80,10 @@ namespace TP_DB_CONNECTION
                 cmd.Parameters.Add(p4);
                 cmd.Parameters.Add(p5);
                 cmd.Parameters.Add(p6);
+                cmd.Parameters.Add(p7);
 
                 int insertedrows = cmd.ExecuteNonQuery();
-                Console.WriteLine("{0} ligne ajoutée", insertedrows);
+                
 
                 if (insertedrows > 0)
                 {
@@ -86,6 +94,12 @@ namespace TP_DB_CONNECTION
                     MessageBox.Show("Insertion echouee");
                 }
 
+                txt_nom.Clear();
+                txt_prenom.Clear();
+                txt_adresse.Clear();
+                txt_telephone.Clear();
+                txt_ville.Clear();
+                txt_pays.Clear();            
 
             }
             catch (Exception ex)

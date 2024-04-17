@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_DB_CONNECTION.ui;
 
 namespace TP_DB_CONNECTION
 {
-    public partial class MainMenu : Form
+    public partial class MenuHome : Form
     {
-        public MainMenu()
+        public MenuHome()
         {
             InitializeComponent();
         }
@@ -21,6 +22,12 @@ namespace TP_DB_CONNECTION
         {
             InsertPassager insertPassager = new InsertPassager();
             insertPassager.Show();
+        }
+
+        private void btn_Reservation_Click(object sender, EventArgs e)
+        {
+            InsertReservation insertReservation = new InsertReservation();
+            insertReservation.Show();
         }
     }
 }
