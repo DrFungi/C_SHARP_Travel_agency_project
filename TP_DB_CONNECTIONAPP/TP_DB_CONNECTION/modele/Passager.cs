@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TP_DB_CONNECTION.modele
+﻿namespace TP_DB_CONNECTION.modele
 {
     internal class Passager
     {
@@ -17,7 +11,7 @@ namespace TP_DB_CONNECTION.modele
 
         public Passager()
         {
-            
+
         }
 
         public Passager(string nom, string prenom, string adresse, string ville, string pays, string statut)

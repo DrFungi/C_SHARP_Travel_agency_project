@@ -35,7 +35,9 @@
             this.txt_date_res = new System.Windows.Forms.TextBox();
             this.btn_inserer = new System.Windows.Forms.Button();
             this.btn_retour = new System.Windows.Forms.Button();
-            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.cmb_passager = new System.Windows.Forms.ComboBox();
+            this.txt_codePassager = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -104,19 +106,39 @@
             this.btn_retour.UseVisualStyleBackColor = true;
             this.btn_retour.Click += new System.EventHandler(this.btn_retour_Click);
             // 
-            // txt_pass
+            // cmb_passager
             // 
-            this.txt_pass.Location = new System.Drawing.Point(236, 81);
-            this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(187, 22);
-            this.txt_pass.TabIndex = 9;
+            this.cmb_passager.FormattingEnabled = true;
+            this.cmb_passager.Location = new System.Drawing.Point(233, 240);
+            this.cmb_passager.Name = "cmb_passager";
+            this.cmb_passager.Size = new System.Drawing.Size(187, 24);
+            this.cmb_passager.TabIndex = 8;
+            this.cmb_passager.SelectedIndexChanged += new System.EventHandler(this.cmb_passager_SelectedIndexChanged);
+            // 
+            // txt_codePassager
+            // 
+            this.txt_codePassager.Location = new System.Drawing.Point(233, 80);
+            this.txt_codePassager.Name = "txt_codePassager";
+            this.txt_codePassager.Size = new System.Drawing.Size(189, 22);
+            this.txt_codePassager.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(78, 243);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Passager";
             // 
             // InsertReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txt_pass);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_codePassager);
+            this.Controls.Add(this.cmb_passager);
             this.Controls.Add(this.btn_retour);
             this.Controls.Add(this.btn_inserer);
             this.Controls.Add(this.txt_date_res);
@@ -140,6 +162,8 @@
         private System.Windows.Forms.TextBox txt_date_res;
         private System.Windows.Forms.Button btn_inserer;
         private System.Windows.Forms.Button btn_retour;
-        private System.Windows.Forms.TextBox txt_pass;
+        private System.Windows.Forms.ComboBox cmb_passager;
+        private System.Windows.Forms.TextBox txt_codePassager;
+        private System.Windows.Forms.Label label4;
     }
 }
