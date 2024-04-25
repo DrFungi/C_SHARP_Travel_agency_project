@@ -1,7 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,39 +34,60 @@ namespace TP_DB_CONNECTION.dao
 
         internal void AddReservation(Reservation reservation)
         {
-                string insert_query = "INSERT INTO RESERVATION (codePassager,statutReservation,dateReservation)" +
-                    " VALUES (@v_code_passager,@v_statut_res,@v_date_res)";
-                            
-                MySqlParameter p1 = new MySqlParameter();
-                p1.ParameterName = "@v_code_passager";
-                p1.Value = reservation.CodePassager;
+            string insert_query = "INSERT INTO RESERVATION (codePassager,statutReservation,dateReservation)" +
+                " VALUES (@v_code_passager,@v_statut_res,@v_date_res)";
 
-                MySqlParameter p2 = new MySqlParameter();
-                p2.ParameterName = "@v_statut_res";
-                p2.Value = reservation.StatutReservation;
+            MySqlParameter p1 = new MySqlParameter();
+            p1.ParameterName = "@v_code_passager";
+            p1.Value = reservation.CodePassager;
 
-                MySqlParameter p3 = new MySqlParameter();
-                p3.ParameterName = "@v_date_res";
-                p3.Value = reservation.DateReservation;
+            MySqlParameter p2 = new MySqlParameter();
+            p2.ParameterName = "@v_statut_res";
+            p2.Value = reservation.StatutReservation;
 
-                MySqlCommand cmd = new MySqlCommand(insert_query, Conn);
+            MySqlParameter p3 = new MySqlParameter();
+            p3.ParameterName = "@v_date_res";
+            p3.Value = reservation.DateReservation;
 
-                cmd.Parameters.Add(p1);
-                cmd.Parameters.Add(p2);
-                cmd.Parameters.Add(p3);
+            MySqlCommand cmd = new MySqlCommand(insert_query, Conn);
 
-                int insertedrows = cmd.ExecuteNonQuery();
+            cmd.Parameters.Add(p1);
+            cmd.Parameters.Add(p2);
+            cmd.Parameters.Add(p3);
 
-                if (insertedrows > 0)
-                {
-                    MessageBox.Show("Insertion reussie");
-                }
-                else
-                {
-                    MessageBox.Show("Insertion echouee");
-                }
+            int insertedrows = cmd.ExecuteNonQuery();
 
-            
+            if (insertedrows > 0)
+            {
+                 MessageBox.Show("Insertion reussie");
+            }
+            else
+            {
+                MessageBox.Show("Insertion echouee");
+            }
+
         }
+
+     
+        //internal void SelectPassager(ComboBox cmb_passager)
+        //{
+        //    string select = "SELECT nom, codePassager FROM PASSAGER";
+        //    MySqlCommand cmd = new MySqlCommand(select,Conn);
+        //    MySqlDataReader rdr = cmd.ExecuteReader();
+
+        //    while (rdr.Read())
+        //    {
+        //        // Ajoutez le nom du passager dans le ComboBox
+        //        cmb_passager.Items.Add(rdr["nom"].ToString());
+        //    }
+
+        //    // Configurez le ValueMember et le DisplayMember
+        //    cmb_passager.ValueMember = "codePassager";
+        //    cmb_passager.DisplayMember = "nom";
+
+        //    // Gérez l'événement SelectedIndexChanged
+        //    cmb_passager.SelectedIndexChanged += cmb_passager_SelectedIndexChanged
+        //}
+
     }
 }

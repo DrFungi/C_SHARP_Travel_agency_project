@@ -9,7 +9,7 @@ namespace TP_DB_CONNECTION
         public InsertPassager()
         {
             InitializeComponent();
-            //txt_nom.Select();
+            
 
         }
         private void btn_retour_Click(object sender, EventArgs e)
