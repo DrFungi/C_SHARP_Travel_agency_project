@@ -1,0 +1,68 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using TP_DB_CONNECTION.modele;
+
+namespace TP_DB_CONNECTION.dao
+{
+    internal class DaoReservation
+    {
+        private string cs = "server=localhost;userid=root;database=gestionreservation;port=3306";
+        public MySqlConnection Conn { get; set; }
+
+        public DaoReservation()
+        {
+            Conn = new MySqlConnection(cs);
+        }
+
+        internal void GetConnection()
+        {
+            Conn.Open();
+        }
+        internal void EndConnection()
+        {
+            Conn.Close();
+        }
+
+        internal void AddReservation(Reservation reservation)
+        {
+                string insert_query = "INSERT INTO RESERVATION (codePassager,statutReservation,dateReservation)" +
+                    " VALUES (@v_code_passager,@v_statut_res,@v_date_res)";
+                            
+                MySqlParameter p1 = new MySqlParameter();
+                p1.ParameterName = "@v_code_passager";
+                p1.Value = reservation.CodePassager;
+
+                MySqlParameter p2 = new MySqlParameter();
+                p2.ParameterName = "@v_statut_res";
+                p2.Value = reservation.StatutReservation;
+
+                MySqlParameter p3 = new MySqlParameter();
+                p3.ParameterName = "@v_date_res";
+                p3.Value = reservation.DateReservation;
+
+                MySqlCommand cmd = new MySqlCommand(insert_query, Conn);
+
+                cmd.Parameters.Add(p1);
+                cmd.Parameters.Add(p2);
+                cmd.Parameters.Add(p3);
+
+                int insertedrows = cmd.ExecuteNonQuery();
+
+                if (insertedrows > 0)
+                {
+                    MessageBox.Show("Insertion reussie");
+                }
+                else
+                {
+                    MessageBox.Show("Insertion echouee");
+                }
+
+            
+        }
+    }
+}
