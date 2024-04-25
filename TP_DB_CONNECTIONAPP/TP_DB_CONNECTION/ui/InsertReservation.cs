@@ -11,7 +11,8 @@ namespace TP_DB_CONNECTION.ui
         {
             InitializeComponent();
         }
-        DaoPassager Dao = new DaoPassager("server=localhost;userid=root;database=gestionreservation;port=3306");
+
+        DaoPassager Dao = new DaoPassager();
 
         public void cmbPassager()
         {
@@ -65,7 +66,7 @@ namespace TP_DB_CONNECTION.ui
         
         private void btn_inserer_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 Dao.GetConnection();
 
@@ -117,7 +118,7 @@ namespace TP_DB_CONNECTION.ui
             finally
             {
                 Dao.EndConnection();
-            }
+            }*/
         }
 
 
