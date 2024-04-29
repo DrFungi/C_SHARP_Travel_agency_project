@@ -16,7 +16,7 @@
 
         }
 
-        public Passager(/*int id,*/ string nom, string prenom, string adresse, string telephone, string ville, string pays, string statut)
+        public Passager( string nom, string prenom, string adresse, string telephone, string ville, string pays, string statut)
         {
             //Id = id;
             Nom = nom;

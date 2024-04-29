@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
 using TP_DB_CONNECTION.modele;
 
@@ -81,6 +82,9 @@ namespace TP_DB_CONNECTION
             }
         }
 
-        
+        internal void GetPassager()
+        {
+            
+        }
     }
 }

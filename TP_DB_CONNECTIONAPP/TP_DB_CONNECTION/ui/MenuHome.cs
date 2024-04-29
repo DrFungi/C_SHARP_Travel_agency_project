@@ -23,5 +23,11 @@ namespace TP_DB_CONNECTION
             insertReservation.Show();
             
         }
+
+        private void btn_Analyse_Click(object sender, EventArgs e)
+        {
+            MenuAnalyse analyse = new MenuAnalyse();
+            analyse.Show();
+        }
     }
 }
