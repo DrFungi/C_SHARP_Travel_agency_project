@@ -80,7 +80,7 @@
             this.cmb_statut_res.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_statut_res.Name = "cmb_statut_res";
             this.cmb_statut_res.Size = new System.Drawing.Size(141, 21);
-            this.cmb_statut_res.TabIndex = 2;
+            this.cmb_statut_res.TabIndex = 1;
             // 
             // btn_inserer
             // 
@@ -88,7 +88,7 @@
             this.btn_inserer.Margin = new System.Windows.Forms.Padding(2);
             this.btn_inserer.Name = "btn_inserer";
             this.btn_inserer.Size = new System.Drawing.Size(112, 40);
-            this.btn_inserer.TabIndex = 6;
+            this.btn_inserer.TabIndex = 4;
             this.btn_inserer.Text = "Inserer";
             this.btn_inserer.UseVisualStyleBackColor = true;
             this.btn_inserer.Click += new System.EventHandler(this.btn_inserer_Click);
@@ -99,7 +99,7 @@
             this.btn_retour.Margin = new System.Windows.Forms.Padding(2);
             this.btn_retour.Name = "btn_retour";
             this.btn_retour.Size = new System.Drawing.Size(112, 40);
-            this.btn_retour.TabIndex = 7;
+            this.btn_retour.TabIndex = 5;
             this.btn_retour.Text = "Retour";
             this.btn_retour.UseVisualStyleBackColor = true;
             this.btn_retour.Click += new System.EventHandler(this.btn_retour_Click);
@@ -111,7 +111,7 @@
             this.cmb_passager.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_passager.Name = "cmb_passager";
             this.cmb_passager.Size = new System.Drawing.Size(141, 21);
-            this.cmb_passager.TabIndex = 0;
+            this.cmb_passager.TabIndex = 3;
             this.cmb_passager.SelectedIndexChanged += new System.EventHandler(this.cmb_passager_SelectedIndexChanged);
             // 
             // txt_codePassager
@@ -120,7 +120,7 @@
             this.txt_codePassager.Margin = new System.Windows.Forms.Padding(2);
             this.txt_codePassager.Name = "txt_codePassager";
             this.txt_codePassager.Size = new System.Drawing.Size(143, 20);
-            this.txt_codePassager.TabIndex = 1;
+            this.txt_codePassager.TabIndex = 0;
             // 
             // label4
             // 
@@ -139,7 +139,7 @@
             this.date_time_pecker.Location = new System.Drawing.Point(175, 155);
             this.date_time_pecker.Name = "date_time_pecker";
             this.date_time_pecker.Size = new System.Drawing.Size(143, 20);
-            this.date_time_pecker.TabIndex = 3;
+            this.date_time_pecker.TabIndex = 2;
             this.date_time_pecker.Value = new System.DateTime(2024, 4, 25, 12, 13, 58, 0);
             // 
             // InsertReservation
