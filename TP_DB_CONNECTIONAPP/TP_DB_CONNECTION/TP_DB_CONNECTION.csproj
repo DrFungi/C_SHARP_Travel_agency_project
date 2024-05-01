@@ -60,6 +60,12 @@
     <Compile Include="ui\FenListePassager.Designer.cs">
       <DependentUpon>FenListePassager.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\FenListePassOccas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\FenListePassOccas.Designer.cs">
+      <DependentUpon>FenListePassOccas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\InsertReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ui\FenListePassager.resx">
       <DependentUpon>FenListePassager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\FenListePassOccas.resx">
+      <DependentUpon>FenListePassOccas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\InsertReservation.resx">
       <DependentUpon>InsertReservation.cs</DependentUpon>

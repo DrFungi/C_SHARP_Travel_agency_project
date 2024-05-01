@@ -33,6 +33,10 @@ namespace TP_DB_CONNECTION.ui
             lps.Show();
         }
 
-
+        private void btn_ocas_Click(object sender, EventArgs e)
+        {
+            FenListePassOccas occpass = new FenListePassOccas();
+            occpass.Show();
+        }
     }
 }

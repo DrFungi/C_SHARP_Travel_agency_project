@@ -84,10 +84,21 @@ namespace TP_DB_CONNECTION
             }
         }
 
-        /*internal void GetPassagers()
+        internal DataTable affOccPass()
         {
-                       
-            
-        }*/
+            DataTable table = new DataTable();
+            try
+            {
+                string query = "SELECT `codePassager` , `nom` , `prenom` , `adresse` FROM passager WHERE `statut` = 'occasionnel'";
+                MySqlCommand cmd = new MySqlCommand(query, Conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                table.Load(rdr);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return table;
+        }
     }
 }
