@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_DB_CONNECTION.modele;
 
 namespace TP_DB_CONNECTION.ui
 {
@@ -17,7 +19,7 @@ namespace TP_DB_CONNECTION.ui
             InitializeComponent();
 
         }
-
+        private DataTable table = new DataTable();
         private void lbx_passager_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -26,6 +28,48 @@ namespace TP_DB_CONNECTION.ui
         private void dgv_lpg_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_aff_passagers_Click(object sender, EventArgs e)
+        {
+            DaoPassager daoPassager = new DaoPassager();
+            try
+            {
+                daoPassager.GetConnection();
+                string query = "SELECT * FROM passager";
+                MySqlCommand cmd = new MySqlCommand(query, daoPassager.Conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                
+                table.Load(rdr);
+                dgv_lpg.DataSource = table;
+                daoPassager.EndConnection();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                daoPassager.EndConnection();
+            }
+        }
+
+        private void txt_search_passager_TextChanged(object sender, EventArgs e)
+        {
+            //DaoPassager daoPassager = new DaoPassager();
+            try
+            {
+                DataView dv = table.DefaultView;
+                dv.RowFilter = "nom LIKE '%"+txt_search_passager.Text+"%'";
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }      
+            
         }
     }
 }
