@@ -51,6 +51,7 @@ namespace TP_DB_CONNECTION.ui
             }
             finally
             {
+                MessageBox.Show("Liste des passagers affichée");
                 daoPassager.EndConnection();
             }
         }
