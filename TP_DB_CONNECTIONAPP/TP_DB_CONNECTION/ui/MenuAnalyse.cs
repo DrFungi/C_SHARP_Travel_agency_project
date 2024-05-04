@@ -38,5 +38,11 @@ namespace TP_DB_CONNECTION.ui
             FenListePassOccas occpass = new FenListePassOccas();
             occpass.Show();
         }
+
+        private void btn_md_Click(object sender, EventArgs e)
+        {
+            MasterDetail masterDetail = new MasterDetail();
+            masterDetail.Show();
+        }
     }
 }

@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="dao\DaoPassager.cs" />
     <Compile Include="dao\DaoReservation.cs" />
-    <Compile Include="modele\ListePassager.cs" />
+    <Compile Include="modele\ListeReservation.cs" />
     <Compile Include="modele\Passager.cs" />
     <Compile Include="modele\Reservation.cs" />
     <Compile Include="ui\FenListePassager.cs">
@@ -71,6 +71,12 @@
     </Compile>
     <Compile Include="ui\InsertReservation.Designer.cs">
       <DependentUpon>InsertReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MasterDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\MasterDetail.Designer.cs">
+      <DependentUpon>MasterDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\MenuAnalyse.cs">
       <SubType>Form</SubType>
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ui\InsertReservation.resx">
       <DependentUpon>InsertReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\MasterDetail.resx">
+      <DependentUpon>MasterDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\MenuAnalyse.resx">
       <DependentUpon>MenuAnalyse.cs</DependentUpon>
