@@ -68,6 +68,33 @@ namespace TP_DB_CONNECTION.dao
 
         }
 
+        internal List<Reservation> SelectionnerData(string selectedFrequentPassager)
+        {
+            //GetConnection();
+            string q = "select codePassager, statutReservation, dateReservation from reservation WHERE CodePassager = @passager";
+            MySqlParameter p1 = new MySqlParameter();
+            p1.ParameterName = "@passager";
+            p1.Value = selectedFrequentPassager;
+
+            MySqlCommand cmd = new MySqlCommand(q, Conn);
+            cmd.Parameters.Add(p1);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            List<Reservation> results = new List<Reservation>();
+            while (reader.Read())
+            {
+                string codePassager = reader["codePassager"].ToString();
+                string statutReservation = (string)reader["statutReservation"];
+                string dateReservation = reader.IsDBNull(reader.GetOrdinal("dateReservation"))
+                    ? null
+                    : reader.GetDateTime(reader.GetOrdinal("dateReservation")).ToString();
+
+                results.Add(new Reservation(codePassager, statutReservation, dateReservation));
+            }
+            //EndConnection();
+            return results;
+        }
+
 
 
 

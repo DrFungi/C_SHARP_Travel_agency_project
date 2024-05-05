@@ -74,7 +74,7 @@
             // 
             this.cmb_statut_res.FormattingEnabled = true;
             this.cmb_statut_res.Items.AddRange(new object[] {
-            "OK",
+            "OK         ",
             "Standby"});
             this.cmb_statut_res.Location = new System.Drawing.Point(177, 105);
             this.cmb_statut_res.Margin = new System.Windows.Forms.Padding(2);

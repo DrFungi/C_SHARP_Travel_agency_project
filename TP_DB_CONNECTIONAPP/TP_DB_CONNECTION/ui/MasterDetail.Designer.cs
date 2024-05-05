@@ -56,7 +56,7 @@
             this.lsb_freq.FormattingEnabled = true;
             this.lsb_freq.Location = new System.Drawing.Point(87, 135);
             this.lsb_freq.Name = "lsb_freq";
-            this.lsb_freq.Size = new System.Drawing.Size(335, 238);
+            this.lsb_freq.Size = new System.Drawing.Size(486, 238);
             this.lsb_freq.TabIndex = 2;
             // 
             // MasterDetail

@@ -18,5 +18,10 @@
             DateReservation = dateReservation;
         }
 
+        public override string ToString()
+        {
+            return "           " + CodePassager + "            -           " + StatutReservation + "              -           " + DateReservation + "\n";
+        }
+
     }
 }
