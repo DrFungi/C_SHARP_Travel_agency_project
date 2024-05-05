@@ -55,9 +55,11 @@ namespace TP_DB_CONNECTION.ui
                 daoRes.GetConnection();
                 // Récupérez le code passager correspondant à la sélection dans le ComboBox
                 string selectedFrequentPassager = cmb_freq_fly.Text.ToString();
-                List<Reservation> reservationList = daoRes.SelectionnerData(selectedFrequentPassager);
+                ListeReservation listing = new ListeReservation();
+                listing = daoRes.SelectionnerData(selectedFrequentPassager);
+                //List<Reservation> reservationList = daoRes.SelectionnerData(selectedFrequentPassager);
                 lsb_freq.Items.Add("Code Passager - Statut Reservation - Date Reservation");
-                foreach (Reservation reservation in reservationList)
+                foreach (Reservation reservation in listing.Listing)
                 {
                     lsb_freq.Items.Add(reservation);
                 }

@@ -8,16 +8,16 @@ namespace TP_DB_CONNECTION.modele
 {
     internal class ListeReservation
     {
-        public List<Reservation> listing { get; set; }
+        public List<Reservation> Listing { get; set; }
 
         public ListeReservation()
         {
-            this.listing = new List<Reservation>();
+            this.Listing = new List<Reservation>();
 
         }
-        public void AjouterPassager(Reservation reservation) //this never gets used
+        public void AjouterReservation(Reservation reservation) //this never gets used
         {
-            listing.Add(reservation);
+            Listing.Add(reservation);
         }
     }
 }
