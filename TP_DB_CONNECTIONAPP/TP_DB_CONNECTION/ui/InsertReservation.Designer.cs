@@ -111,7 +111,7 @@
             this.cmb_passager.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_passager.Name = "cmb_passager";
             this.cmb_passager.Size = new System.Drawing.Size(141, 21);
-            this.cmb_passager.TabIndex = 3;
+            this.cmb_passager.TabIndex = 0;
             this.cmb_passager.SelectedIndexChanged += new System.EventHandler(this.cmb_passager_SelectedIndexChanged);
             // 
             // txt_codePassager
@@ -120,7 +120,7 @@
             this.txt_codePassager.Margin = new System.Windows.Forms.Padding(2);
             this.txt_codePassager.Name = "txt_codePassager";
             this.txt_codePassager.Size = new System.Drawing.Size(143, 20);
-            this.txt_codePassager.TabIndex = 0;
+            this.txt_codePassager.TabIndex = 5;
             // 
             // label4
             // 
