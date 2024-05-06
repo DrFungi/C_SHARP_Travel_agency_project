@@ -35,9 +35,9 @@
             this.btn_inserer = new System.Windows.Forms.Button();
             this.btn_retour = new System.Windows.Forms.Button();
             this.cmb_passager = new System.Windows.Forms.ComboBox();
-            this.txt_codePassager = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.date_time_pecker = new System.Windows.Forms.DateTimePicker();
+            this.lbl_codePass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -114,14 +114,6 @@
             this.cmb_passager.TabIndex = 0;
             this.cmb_passager.SelectedIndexChanged += new System.EventHandler(this.cmb_passager_SelectedIndexChanged);
             // 
-            // txt_codePassager
-            // 
-            this.txt_codePassager.Location = new System.Drawing.Point(175, 65);
-            this.txt_codePassager.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_codePassager.Name = "txt_codePassager";
-            this.txt_codePassager.Size = new System.Drawing.Size(143, 20);
-            this.txt_codePassager.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -142,14 +134,23 @@
             this.date_time_pecker.TabIndex = 2;
             this.date_time_pecker.Value = new System.DateTime(2024, 4, 25, 12, 13, 58, 0);
             // 
+            // lbl_codePass
+            // 
+            this.lbl_codePass.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_codePass.Location = new System.Drawing.Point(174, 50);
+            this.lbl_codePass.Name = "lbl_codePass";
+            this.lbl_codePass.Size = new System.Drawing.Size(144, 23);
+            this.lbl_codePass.TabIndex = 11;
+            this.lbl_codePass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // InsertReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.lbl_codePass);
             this.Controls.Add(this.date_time_pecker);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_codePassager);
             this.Controls.Add(this.cmb_passager);
             this.Controls.Add(this.btn_retour);
             this.Controls.Add(this.btn_inserer);
@@ -174,8 +175,8 @@
         private System.Windows.Forms.Button btn_inserer;
         private System.Windows.Forms.Button btn_retour;
         private System.Windows.Forms.ComboBox cmb_passager;
-        private System.Windows.Forms.TextBox txt_codePassager;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker date_time_pecker;
+        private System.Windows.Forms.Label lbl_codePass;
     }
 }

@@ -7,6 +7,7 @@ using TP_DB_CONNECTION.modele;
 
 namespace TP_DB_CONNECTION.ui
 {
+    // This class handles the operations related to inserting a new reservation.
     public partial class InsertReservation : Form
     {
 
@@ -16,6 +17,7 @@ namespace TP_DB_CONNECTION.ui
             Display_Passager();
         }
         void Display_Passager()
+        // This method fetches and displays all passengers from the database.
         {
             DaoReservation res = new DaoReservation();
             try
@@ -42,16 +44,14 @@ namespace TP_DB_CONNECTION.ui
         }
 
 
+        // This method handles the event when the 'Return' button is clicked.
         private void btn_retour_Click(object sender, EventArgs e)
         {
             this.Visible = false;
         }
-        private void InsertReservation_Load(object sender, EventArgs e)
-        {
-            
-        }
-        
 
+        // This method handles the event when a different passenger is selected from the dropdown.
+        // It fetches and displays the corresponding passenger code.
         private void cmb_passager_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -71,11 +71,11 @@ namespace TP_DB_CONNECTION.ui
 
                 if (rdr.Read())
                 {
-                    txt_codePassager.Text = rdr["codePassager"].ToString();
+                    lbl_codePass.Text = rdr["codePassager"].ToString();
                 }
                 else
                 {
-                    txt_codePassager.Clear(); // Effacez le champ si aucun code n'est trouvé
+                    lbl_codePass.Text = "";
                 }
             }
             catch (Exception ex)
@@ -88,12 +88,14 @@ namespace TP_DB_CONNECTION.ui
             }
         }
         
+        //method handles the event when the 'Insert' button is clicked.
+        // It creates a new reservation and adds it to the database.
         private void btn_inserer_Click(object sender, EventArgs e)
         {
             DaoReservation reservation = new DaoReservation();
             try
             {
-                string v_codePassager = txt_codePassager.Text;
+                string v_codePassager = lbl_codePass.Text;
                 string v_statut_res = cmb_statut_res.Text;
                 string v_date_res = date_time_pecker.Text;
                 Reservation res = new Reservation(v_codePassager, v_statut_res, v_date_res);
@@ -109,7 +111,7 @@ namespace TP_DB_CONNECTION.ui
                 reservation.EndConnection();
             }
             cmb_passager.SelectedIndex = -1;
-            txt_codePassager.Clear();
+            lbl_codePass.Text="";
             cmb_statut_res.SelectedIndex = -1;
         }
 
