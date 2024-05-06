@@ -72,5 +72,11 @@ namespace TP_DB_CONNECTION.ui
             }      
             
         }
+
+        private void btn_retourAnalyse_Click(object sender, EventArgs e)
+        {
+             this.Visible = false;
+            
+        }
     }
 }

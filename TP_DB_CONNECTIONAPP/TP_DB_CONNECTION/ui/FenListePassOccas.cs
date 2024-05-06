@@ -51,7 +51,7 @@ namespace TP_DB_CONNECTION.ui
             try
             {
                 statut.GetConnection();
-                string v_statut = cmb_statut.Text.ToString();
+                //string v_statut = cmb_statut.Text.ToString();
                 
 
                 // Utilisez le code passager pour récupérer les informations nécessaires dans la table Passager
@@ -78,6 +78,21 @@ namespace TP_DB_CONNECTION.ui
                statut.EndConnection();
             }
 
+        }
+
+        private void txt_box_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataView dv = table.DefaultView;
+                dv.RowFilter = "nom LIKE '%" + txt_search_occas.Text + "%'";
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
