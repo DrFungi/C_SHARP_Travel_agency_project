@@ -84,13 +84,14 @@ namespace TP_DB_CONNECTION.dao
             while (reader.Read())
             {
                 string codePassager = reader["codePassager"].ToString();
-                string statutReservation = reader["statutReservation"].ToString();
+                string statutReservation = (string)reader["statutReservation"];
                 string dateReservation = reader.IsDBNull(reader.GetOrdinal("dateReservation"))
                     ? null
                     : reader.GetDateTime(reader.GetOrdinal("dateReservation")).ToString();
 
                 results.AjouterReservation(new Reservation(codePassager, statutReservation, dateReservation));
             }
+            //EndConnection();
             return results;
         }
 

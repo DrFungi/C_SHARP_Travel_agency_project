@@ -15,7 +15,7 @@ namespace TP_DB_CONNECTION.modele
             this.Listing = new List<Reservation>();
 
         }
-        public void AjouterReservation(Reservation reservation) 
+        public void AjouterReservation(Reservation reservation) //this never gets used
         {
             Listing.Add(reservation);
         }
