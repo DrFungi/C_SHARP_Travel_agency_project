@@ -100,5 +100,31 @@ namespace TP_DB_CONNECTION
             }
             return table;
         }
+
+        internal Passager SelectionnerPassager(string selectedFrequentPassager)
+        {
+            string q = "select * from passager WHERE CodePassager = @passager";
+            MySqlParameter p1 = new MySqlParameter();
+            p1.ParameterName = "@passager";
+            p1.Value = selectedFrequentPassager;
+
+            MySqlCommand cmd = new MySqlCommand(q, Conn);
+            cmd.Parameters.Add(p1);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            Passager results = new Passager();
+            while (reader.Read())
+            {
+                string nom = reader["nom"].ToString();
+                string prenom = reader["prenom"].ToString();
+                string adresse = reader["adresse"].ToString();
+                string telephone = reader["telephone"].ToString();
+                string ville = reader["ville"].ToString();
+                string pays = reader["pays"].ToString();
+                string statut = reader["statut"].ToString();
+
+                results = new Passager(nom, prenom, adresse, telephone, ville, pays, statut);
+            }
+            return results;
+        }
     }
 }

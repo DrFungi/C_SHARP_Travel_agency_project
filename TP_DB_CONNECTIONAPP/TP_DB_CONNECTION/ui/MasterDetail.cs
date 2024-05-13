@@ -49,36 +49,31 @@ namespace TP_DB_CONNECTION.ui
         private void cmb_freq_fly_SelectedIndexChanged(object sender, EventArgs e)
         {
             lsb_freq.Items.Clear();
+            DaoPassager daoPassager = new DaoPassager();
+            daoPassager.GetConnection();
+            DaoReservation daoRes = new DaoReservation();
+            daoRes.GetConnection();
+
             try
             {
-                DaoReservation daoRes = new DaoReservation();
-                daoRes.GetConnection();
+                
+                
                 // Récupérez le code passager correspondant à la sélection dans le ComboBox
                 string selectedFrequentPassager = cmb_freq_fly.Text.ToString();
                 ListeReservation listing = new ListeReservation();
                 listing = daoRes.SelectionnerData(selectedFrequentPassager);
-                //List<Reservation> reservationList = daoRes.SelectionnerData(selectedFrequentPassager);
-                lsb_freq.Items.Add("Code Passager - Statut Reservation - Date Reservation");
+                Passager passager = new Passager();
+                passager = daoPassager.SelectionnerPassager(selectedFrequentPassager);
+                lsb_freq.Items.Add(passager);
+                lsb_freq.Items.Add(" ");
+                lsb_freq.Items.Add("Code Reservation - Statut Reservation - Date Reservation");
+                lsb_freq.Items.Add(" ");
                 foreach (Reservation reservation in listing.Listing)
                 {
                     lsb_freq.Items.Add(reservation);
                 }
                 
 
-                /* Utilisez le code passager pour récupérer les informations nécessaires dans la table Passager
-                string q = "SELECT codeReservation, statutReservation, dateReservation FROM RESERVATION WHERE codePassager = @codePassager";
-                MySqlCommand cmd = new MySqlCommand(q, passager.Conn);
-                cmd.Parameters.AddWithValue("@codePassager", selectedFrequentPassager);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                if (rdr.Read())
-                {
-                    lsb_freq.Text = rdr["codePassager"].ToString();
-                }
-                else
-                {
-                  //  lsb_freq.Clear(); // Effacez le champ si aucun code n'est trouvé
-                }*/
             }
             catch (Exception ex)
             {
@@ -86,9 +81,15 @@ namespace TP_DB_CONNECTION.ui
             }
             finally
             {
-                passager.EndConnection();
+                daoPassager.EndConnection();
+                daoRes.EndConnection();
             }
 
+        }
+
+        private void btn_go_back_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

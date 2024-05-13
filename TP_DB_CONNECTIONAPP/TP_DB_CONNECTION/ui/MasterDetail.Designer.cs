@@ -31,6 +31,7 @@
             this.cmb_freq_fly = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lsb_freq = new System.Windows.Forms.ListBox();
+            this.btn_go_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmb_freq_fly
@@ -54,16 +55,27 @@
             // lsb_freq
             // 
             this.lsb_freq.FormattingEnabled = true;
-            this.lsb_freq.Location = new System.Drawing.Point(87, 135);
+            this.lsb_freq.Location = new System.Drawing.Point(87, 130);
             this.lsb_freq.Name = "lsb_freq";
-            this.lsb_freq.Size = new System.Drawing.Size(486, 238);
+            this.lsb_freq.Size = new System.Drawing.Size(732, 238);
             this.lsb_freq.TabIndex = 2;
+            // 
+            // btn_go_back
+            // 
+            this.btn_go_back.Location = new System.Drawing.Point(895, 212);
+            this.btn_go_back.Name = "btn_go_back";
+            this.btn_go_back.Size = new System.Drawing.Size(110, 48);
+            this.btn_go_back.TabIndex = 3;
+            this.btn_go_back.Text = "Retour";
+            this.btn_go_back.UseVisualStyleBackColor = true;
+            this.btn_go_back.Click += new System.EventHandler(this.btn_go_back_Click);
             // 
             // MasterDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1128, 450);
+            this.Controls.Add(this.btn_go_back);
             this.Controls.Add(this.lsb_freq);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_freq_fly);
@@ -79,5 +91,6 @@
         private System.Windows.Forms.ComboBox cmb_freq_fly;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lsb_freq;
+        private System.Windows.Forms.Button btn_go_back;
     }
 }

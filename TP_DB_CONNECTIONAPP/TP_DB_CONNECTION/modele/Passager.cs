@@ -27,6 +27,10 @@
             Pays = pays;
             Statut = statut;
         }
+        public override string ToString()
+        {
+            return "Nom: " + Nom + " Prenom: " + Prenom + " Adresse: " + Adresse + " Telephone: " + Telephone + " Ville: " + Ville + " Pays: " + Pays + " Statut: " + Statut;
+        }
 
     }
 }
